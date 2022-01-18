@@ -3,15 +3,19 @@
 ## How to run this.
 
 1. Clone the repo
-2. Run the hardhat node:
+2. Install the packages:
+```
+$ npm install
+```
+3. Run the hardhat node:
 ```
 $ npx hardhat node
 ```
-3. Run scripts (deploy contracts).
+4. Run scripts (deploy contracts).
 ```
 npx hardhat run scripts/script.js 
 ```
-4. Run tests
+5. Run tests
 ```
 npx hardhat test --network hardhat
 ```
