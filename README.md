@@ -22,5 +22,9 @@ npx hardhat test --network hardhat
 * Run with forked ganache node (`npx ganache-cli --fork ..`)
 * Maybe deploy to the AVAX chain? :) 
 
-### Creators
+## Disclaimer:
+
+All of the smart contracts were extracted from the official [UniswapV2 Core](https://github.com/Uniswap/v2-core) and [UniswapV2 Periphery](https://github.com/Uniswap/v2-periphery) repositories.
+
+## Creators
 * Miguel Gagliardo: <migag9@gmail.com>
