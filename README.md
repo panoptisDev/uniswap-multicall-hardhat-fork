@@ -2,28 +2,44 @@
 
 ## How to run this.
 
-1. Clone the repo
-2. Install the packages:
+1. Start your own ganache node:
 ```
+$ npx ganache-cli --fork https://mainnet.infura.io/v3/92f997eda2a04bfcb037010436ced7c8 --unlock 0x503828976D22510aad0201ac7EC88293211D23Da
+```
+
+2. Clone the repo
+
+3. cd into the uniswap-contracts and install the packages, then deploy the contracts
+```
+$ cd uniswap-contracts
 $ npm install
 ```
-3. Run the hardhat node:
+
+4. Make sure to change the `privateKeyDev` on the `hardhat.config.js` file to match one of the private keys of your node.
+
+5. Copile and deploy:
 ```
-$ npx hardhat node
+$ npx hardhat compile
+$ npx hardhat run scripts/deploy.js --network fork
 ```
-4. Run scripts (deploy contracts).
+
+6. cd into the uniswap-interface and install the packages:
 ```
-npx hardhat run scripts/script.js 
+$ cd uniswap-interface
+$ npm install
+$ npm start
 ```
-5. Run tests
+
+7. Access to it through `http://localhost:3000`
+
+## Run tests
+
 ```
-npx hardhat test --network hardhat
+npx hardhat test --network fork
 ```
 
 ## TODO:
-* Deploy rest of the contracts (WIP)
-* Frontend
-* Run with forked ganache node (`npx ganache-cli --fork ..`)
+* Fix Frontend
 * Maybe deploy to the AVAX chain? :) 
 
 ## Disclaimer:
