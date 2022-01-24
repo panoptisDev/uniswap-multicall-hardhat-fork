@@ -1,9 +1,12 @@
 require('@nomiclabs/hardhat-ethers');
 
-// Change private keys accordingly to ganache-cli
 const privateKey = process.env.PRIVKEY;
-const privateKeyDev =
-   '0x563689b667ba20ca938734e764626c2dfd9b4f96300cf81b6ac82230a1f7be3e';
+// Change private keys accordingly to ganache-cli
+const privateKeyDev = '0x563689b667ba20ca938734e764626c2dfd9b4f96300cf81b6ac82230a1f7be3e';
+
+// WARNING: Real Testnet stuff here
+const rinkebyPrivateKey = '';
+const ALCHEMY_API_KEY = '';
 
 module.exports = {
    defaultNetwork: 'hardhat',
@@ -14,6 +17,10 @@ module.exports = {
          url: 'http://127.0.0.1:8545',
          accounts: [privateKeyDev],
       },
+      rinkeby: {
+         url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+         accounts: [rinkebyPrivateKey]
+      }
    },
    solidity: {
       compilers: [
