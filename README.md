@@ -1,6 +1,7 @@
 # Uniswap Fork
 
-This fork is the 
+* This is an intention to fork UniswapV2 as endgame job for the [Encode Club Avalance Workshop](https://www.encode.club/avalanche-bootcamp)
+* Slides can be found [here](https://docs.google.com/presentation/d/1PLeGStAXrbc3KaBQR_I1M8AWKS0tUjsZ-UokP2UHXoE/edit?usp=sharing)
 
 ## How to run this.
 
