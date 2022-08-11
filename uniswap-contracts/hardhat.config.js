@@ -5,8 +5,8 @@ const privateKey = process.env.PRIVKEY;
 const privateKeyDev = '0x563689b667ba20ca938734e764626c2dfd9b4f96300cf81b6ac82230a1f7be3e';
 
 // WARNING: Real Testnet stuff here
-const rinkebyPrivateKey = '';
-const ALCHEMY_API_KEY = '';
+const rinkebyPrivateKey = '0x563689b667ba20ca938734e764626c2dfd9b4f96300cf81b6ac82230a1f7be3e';
+const ALCHEMY_API_KEY = '7P73VSFYP49UDHTQCMP6PSE9GQ2KBV49Q6';
 
 module.exports = {
    defaultNetwork: 'hardhat',
@@ -18,7 +18,7 @@ module.exports = {
          accounts: [privateKeyDev],
       },
       rinkeby: {
-         url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+         url: `https://goerli.optimism.io/${ALCHEMY_API_KEY}`,
          accounts: [rinkebyPrivateKey]
       }
    },
@@ -29,7 +29,7 @@ module.exports = {
             settings: {
                optimizer: {
                   enabled: true,
-                  runs: 200,
+                  runs: 9999,
                },
             },
          },
@@ -38,7 +38,7 @@ module.exports = {
             settings: {
                optimizer: {
                   enabled: true,
-                  runs: 200,
+                  runs: 9999,
                },
             },
          },
