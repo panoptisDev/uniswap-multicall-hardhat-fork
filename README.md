@@ -17,14 +17,31 @@ https://teller.gitbook.io/teller-1/testing-guide/getting-testnet-tokens-rinkeby
 ```
 $ cd uniswap-contracts
 $ npm install
-```
+
+yarn add @nomiclabs/hardhat-ethers
+yarn add @nomiclabs/hardhat-etherscan
+yarn add dotenv
+yarn add @openzeppelin/upgrades``
+
+-----------------------
 
 4. Make sure to change the `privateKeyDev` on the `hardhat.config.js` file to match one of the private keys of your node.
+
+
 
 5. Compile and deploy:
 ```
 $ npx hardhat compile
 $ npx hardhat run scripts/deploy.js --network rinkeby
+npx hardhat run scripts/deploy.js --network mumbai
+
+npx hardhat verify --network mumbai 0xF364A6e654387F7B7AaB1AE59Aa71120A235977B
+npx hardhat verify --network mainnet 0x7E555D74f706A94287DC526d1499C7a494EDbc86
+npx hardhat verify --network mainnet 0xb2F6cCba4E40f98f5B89F682c95BabC3648C0523
+npx hardhat verify --network mainnet 0x8F48497A0955D3D9D131bAfbDBCc10D72FCf9283
+npx hardhat verify --network mainnet 0x8F48497A0955D3D9D131bAfbDBCc10D72FCf9283
+
+
 ```
 
 6. Copy the contracts addresses, i.e.:
@@ -58,4 +75,4 @@ $ yarn start
 All of the smart contracts were extracted from the official [UniswapV2 Core](https://github.com/Uniswap/v2-core) and [Uniswap Interface v3.0.0](https://github.com/Uniswap/interface/tree/v3.0.0) repositories.
 
 ## Creators
-* Miguel Gagliardo: <migag9@gmail.com>
+* @panoptisDev

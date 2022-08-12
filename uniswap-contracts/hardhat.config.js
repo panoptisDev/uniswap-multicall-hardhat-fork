@@ -1,4 +1,6 @@
 require('@nomiclabs/hardhat-ethers');
+require('@nomiclabs/hardhat-etherscan');
+
 
 const privateKey = process.env.PRIVKEY;
 // Change private keys accordingly to ganache-cli
@@ -10,6 +12,10 @@ const ALCHEMY_API_KEY = '7P73VSFYP49UDHTQCMP6PSE9GQ2KBV49Q6';
 
 module.exports = {
    defaultNetwork: 'hardhat',
+   etherscan: {
+      apiKey: process.env.ETHERSCAN_API_KEY,
+      polygonMumbai: '4WD9AQ7TUBJ6IU7EFEY8R4BA69CS7FTFND',
+  },
 
    networks: {
       hardhat: {},
@@ -18,9 +24,39 @@ module.exports = {
          accounts: [privateKeyDev],
       },
       rinkeby: {
-         url: `https://goerli.optimism.io/${ALCHEMY_API_KEY}`,
+         url: `https://rpc.slock.it/goerli${ALCHEMY_API_KEY}`,
          accounts: [rinkebyPrivateKey]
-      }
+      },
+      bsc: {
+         url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+         chainId: 97,
+         accounts:
+         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      },
+      matic: {
+         url: 'https://rpc-mainnet.maticvigil.com',
+         accounts:
+         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+         chainId: 137,
+         live: true,
+         gasPrice: 600000000000, // 600Gwei
+   
+         gasMultiplier: 2,
+         saveDeployments: true,
+       },
+       mumbai: {
+         url: 'https://matic-testnet-archive-rpc.bwarelabs.com',
+         accounts: [rinkebyPrivateKey],
+         chainId: 80001,
+         live: true,
+         saveDeployments: true,
+         tags: ['staging'],
+         gas: 12000000,
+         timeout: 1800000,
+         gasPrice: 42000000000,
+         allowUnlimitedContractSize: true,
+         blockGasLimit: 0x1fffffffffffff,
+       },
    },
    solidity: {
       compilers: [
@@ -52,4 +88,5 @@ module.exports = {
    mocha: {
       timeout: 20000,
    },
+     
 };

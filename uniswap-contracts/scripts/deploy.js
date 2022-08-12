@@ -37,12 +37,12 @@ async function deploy() {
 
    console.log(`Multicall deployed to : ${multicallInstance.address}`);
 
-   //VolcanoCoin Multicall (needed for Interface)
-   const volcanoCoin = await ethers.getContractFactory('VolcanoCoin');
-   const volcanoCoinInstance = await volcanoCoin.deploy();
-   await volcanoCoinInstance.deployed();
+   //WhxToken Multicall (needed for Interface)
+   //const whxToken = await ethers.getContractFactory('WhxToken');
+   //const whxTokenInstance = await whxToken.deploy();
+   //await whxTokenInstance.deployed();
 
-   console.log(`VolcanoCoin deployed to : ${volcanoCoinInstance.address}`);
+  //console.log(`WhxToken deployed to : ${whxTokenInstance.address}`);
 }
 
 deploy()
